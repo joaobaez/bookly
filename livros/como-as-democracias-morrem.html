@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avalie sua leitura no Bookly">
+
+    <title>Minha Avaliação | Bookly</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../assets/src/styles.css">
+
+    <script src="../assets/index.js" defer></script>
+</head>
+
+<body>
+    <!-- HEADER PADRÃO -->
+    <header>
+        <nav class="navbar p-2" role="navigation" aria-label="main navigation">
+            <div class="container px-6">
+                <div class="navbar-brand">
+                    <figure class="navbar-item image">
+                        <a class="" href="../index.html">
+                            <img src="../assets/src/icons/logo.svg" alt="logo Bookly">
+                        </a>
+                    </figure>
+                    <a role="button" id="navbar-burger" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="navbar-menu" class="navbar-menu">
+                    <div class="navbar-start is-flex-grow-1 is-justify-content-center">
+                        <a class="navbar-item">
+                            Feed & Amigos
+                        </a>
+                        <a class="navbar-item">
+                            Clubes
+                        </a>    
+                    </div>
+            
+                    <div class="navbar-end is-hidden-touch">
+                        <div class="navbar-item">
+                            <img src="../assets/src/icons/has-notification.svg" alt="Notificações">
+                        </div>
+
+                        <div class="navbar-item">
+                            <figure class="image is-32x32">
+                                <img class="is-rounded" src="https://bulma.io/assets/images/placeholders/48x48.png" alt="imagem de perfil">
+                            </figure>
+                        </div>
+                        
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                                Clarice
+                            </a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item">Configurações</a>
+                                <a class="navbar-item" href="../login.html">Sair</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navbar-end is-hidden-desktop">
+                        <a href="" class="navbar-item">Configurações</a>
+                        <a class="navbar-item" href="../login.html">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- CONTEÚDO -->
+    <main class="section">
+        <div class="container review-container">
+            <!-- BREADCRUMB -->
+            <nav class="breadcrumb mb-5" aria-label="breadcrumbs">
+                <ul>
+                    <li>
+                        <a href="../../index.html">
+                            Biblioteca
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html"> 
+                            Livros
+                        </a>
+                    </li>
+
+                    <li class="is-active">
+                        <a aria-current="page">
+                            Avaliação
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- CARD LIVRO -->
+            <div class="card mb-6">
+                <div class="card-content">
+                    <div class="columns is-vcentered">
+                        
+                        <div class="column is-3">
+                            <figure class="book-cover-large image is-3by4">
+                                <img
+                                    id="book-cover-preview"
+                                    src="../assets/src/img/books/como_democracias_morrem.png"
+                                    alt="Livro">
+                            </figure>
+                        </div>
+                        <div class="column">
+
+                            <span class="tag is-secondary mb-3">
+                                LIVRO & COMUNIDADE
+                            </span>
+
+                            <h1 class="title is-1 is-family-secondary">
+                                Como as democracias morrem
+                            </h1>
+
+                            <h2 class="subtitle">
+                                Daniel Ziblatt e Steven Levitsky
+                            </h2>
+
+                            <p class="has-text-grey">
+                                Ciência política • 2018
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AVALIAÇÃO -->
+            <div class="card">
+                <div class="card-content">
+
+                    <h2 class="title is-3 is-family-secondary">
+                        O que você achou da leitura?
+                    </h2>
+
+                    <p class="subtitle">
+                        Compartilhe sua experiência e ajude outros leitores.
+                    </p>
+
+                    <form id="evaluation-form">
+                        <!-- NOTA -->
+                        <div class="field">
+
+                            <label class="label">
+                                Sua Nota
+                            </label>
+
+                            <div class="rating-stars">
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="1">★</button>
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="2">★</button>
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="3">★</button>
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="4">★</button>
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="5">★</button>
+                            </div>
+
+                            <p 
+                                id="rating-message"
+                                class="help mt-2">
+                                Selecione uma nota.
+                            </p>
+                        </div>
+                        <!-- TEXTO -->
+                        <div class="field mt-5">
+
+                            <label class="label">
+                                Sua Avaliação
+                            </label>
+
+                            <div class="control">
+                                <textarea
+                                    id="review-text"
+                                    class="textarea"
+                                    rows="7"
+                                    placeholder="O que mais chamou sua atenção neste livro?"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="buttons is-right mt-5">
+                            <a
+                                href="../index.html"
+                                class="button is-light">
+                                Voltar para página inicial
+                            </a>
+
+                            <button
+                                type="submit"
+                                class="button is-primary has-text-primary-light">
+                                Publicar Avaliação
+                            </button>
+                        </div>
+
+                        <article
+                            id="success-message"
+                            class="message is-success success-message">
+
+                            <div class="message-body">
+                                ✅ Avaliação publicada com sucesso!
+                            </div>
+                        </article>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="content has-text-centered pb-3">
+            <p>
+                <strong>Bookly</strong> &copy; 2026
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
