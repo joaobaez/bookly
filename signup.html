@@ -44,7 +44,7 @@
 
                     <div class="field mb-5">
                         <div class="control">
-                            <button type="button" class="button is-fullwidth is-large is-primary has-text-primary-light">
+                            <button type="button" class="button is-fullwidth is-large is-primary has-text-primary-light" onclick="window.location.href='./index.html';">
                                 <span class="is-size-6">Criar</span>
                             </button>
                         </div>
@@ -57,9 +57,28 @@
             </div>
         </main>
 
-        <section class="column is-half-desktop is-fullheight is-hidden-mobile" style="background-color: #100B08;">
-            <div class="is-flex is-justify-content-end is-align-items-end p-6" style="height:100%;">
-                <a href="./login.html" class="title is-3 has-text-right">Já tenho uma conta</a>
+          <section class="column is-half-desktop hero is-fullheight is-hidden-mobile">
+            
+            <div class="hero-body is-align-items-flex-end" 
+                style="background-color: #100B08;
+                    background-image: 
+                        linear-gradient(
+                            to bottom,
+                            rgba(16, 11, 8, 0.15) 0%,
+                            rgba(16, 11, 8, 0.1) 45%,
+                            rgba(16, 11, 8, 0.55) 75%,
+                            rgba(16, 11, 8, 0.95) 100%
+                        ),
+                        url(./assets/src/img/background.png);
+                    background-size: cover;
+                    background-position: center;">
+                <div>
+                    <h2 class="title is-1 is-family-secondary has-text-grey-light">
+                        Boas leituras.<br>
+                        Boas conversas.
+                    </h2>
+                    <p class="has-text-grey-light">Encontre sua próxima leitura e compartilhe suas ideias com outros leitores.</p>
+                </div>
             </div>
         </section>
 
