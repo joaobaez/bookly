@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avalie sua leitura no Bookly">
+
+    <title>Minha Avaliação | Bookly</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/src/styles.css">
+
+    <style>
+        .rating-stars {
+            display: flex;
+            gap: 8px;
+        }
+
+        .star-button {
+            background: none;
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: #d8d2c9;
+            transition: .2s;
+        }
+
+        .star-button:hover {
+            transform: scale(1.1);
+        }
+
+        .star-button.active {
+            color: #E5A823;
+        }
+
+        .book-cover-large {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .book-cover-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .review-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .success-message {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER PADRÃO -->
+    <header>
+        <nav class="navbar is-flex p-2" role="navigation" aria-label="main navigation">
+
+            <div class="container">
+
+                <div class="navbar-brand">
+                    <figure class="navbar-item image">
+                        <a href="./index.html">
+                            <img src="./assets/src/icons/logo.svg" alt="Bookly">
+                        </a>
+                    </figure>
+                </div>
+
+                <div class="navbar-menu">
+
+                    <div class="navbar-start">
+
+                        <a class="navbar-item">
+                            Feed & Amigos
+                        </a>
+
+                        <a class="navbar-item">
+                            Clubes
+                        </a>
+
+                    </div>
+
+                    <div class="navbar-end">
+
+                        <img src="./assets/src/icons/has-notification.svg" alt="Notificações">
+
+                        <figure class="image is-48x48">
+                            <img class="is-rounded"
+                                src="https://bulma.io/assets/images/placeholders/32x32.png"
+                                alt="Usuário">
+                        </figure>
+
+                        <div class="navbar-item has-dropdown is-hoverable">
+
+                            <a class="navbar-link">
+                                Username
+                            </a>
+
+                            <div class="navbar-dropdown">
+
+                                <a class="navbar-item">
+                                    Configurações
+                                </a>
+
+                                <a class="navbar-item" href="./login.html">
+                                    Sair
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO -->
+    <main class="section">
+
+        <div class="container review-container">
+
+            <!-- BREADCRUMB -->
+            <nav class="breadcrumb mb-5" aria-label="breadcrumbs">
+
+                <ul>
+
+                    <li>
+                        <a href="./index.html">
+                            Biblioteca
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html">
+                            Livros
+                        </a>
+                    </li>
+
+                    <li class="is-active">
+                        <a aria-current="page">
+                            Avaliação
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- CARD LIVRO -->
+            <div class="card mb-6">
+
+                <div class="card-content">
+
+                    <div class="columns is-vcentered">
+
+                        <div class="column is-3">
+
+                            <figure class="book-cover-large image is-3by4">
+
+                                <img
+                                    id="book-cover-preview"
+                                    src="./assets/src/img/books/metamorfose.png"
+                                    alt="Livro">
+
+                            </figure>
+
+                        </div>
+
+                        <div class="column">
+
+                            <span class="tag is-secondary mb-3">
+                                LIVRO & COMUNIDADE
+                            </span>
+
+                            <h1 class="title is-1 is-family-secondary">
+                                A Metamorfose
+                            </h1>
+
+                            <h2 class="subtitle">
+                                Franz Kafka
+                            </h2>
+
+                            <p class="has-text-grey">
+                                Novela • Literatura Fantástica • 1915
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- AVALIAÇÃO -->
+            <div class="card">
+
+                <div class="card-content">
+
+                    <h2 class="title is-3 is-family-secondary">
+                        O que você achou da leitura?
+                    </h2>
+
+                    <p class="subtitle">
+                        Compartilhe sua experiência e ajude outros leitores.
+                    </p>
+
+                    <form id="evaluation-form">
+
+                        <!-- NOTA -->
+                        <div class="field">
+
+                            <label class="label">
+                                Sua Nota
+                            </label>
+
+                            <div class="rating-stars">
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="1">★</button>
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="2">★</button>
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="3">★</button>
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="4">★</button>
+
+                                <button
+                                    class="star-button"
+                                    type="button"
+                                    data-rating="5">★</button>
+
+                            </div>
+
+                            <p
+                                id="rating-message"
+                                class="help mt-2">
+
+                                Selecione uma nota.
+
+                            </p>
+
+                        </div>
+
+                        <!-- TEXTO -->
+                        <div class="field mt-5">
+
+                            <label class="label">
+                                Sua Avaliação
+                            </label>
+
+                            <div class="control">
+
+                                <textarea
+                                    id="review-text"
+                                    class="textarea"
+                                    rows="7"
+                                    placeholder="O que mais chamou sua atenção neste livro?"></textarea>
+
+                            </div>
+
+                        </div>
+                        <div class="buttons is-right mt-5">
+                            <a
+                                href="./index.html"
+                                class="button is-light">
+
+                                Voltar para página inicial
+
+                            </a>
+                            <button
+                                type="submit"
+                                class="button is-primary">
+
+                                Publicar Avaliação
+
+                            </button>
+
+                        </div>
+
+                        <article
+                            id="success-message"
+                            class="message is-success success-message">
+
+                            <div class="message-body">
+                                ✅ Avaliação publicada com sucesso!
+                            </div>
+
+                        </article>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="content has-text-centered">
+
+            <p>
+                <strong>Bookly</strong> © 2026
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        let selectedRating = 0;
+
+        const stars = document.querySelectorAll(".star-button");
+
+        const ratingMessage =
+            document.getElementById("rating-message");
+
+        const successMessage =
+            document.getElementById("success-message");
+
+        const reviewText =
+            document.getElementById("review-text");
+
+        const ratingTexts = {
+            1: "Não gostei",
+            2: "Poderia ser melhor",
+            3: "Gostei",
+            4: "Muito bom",
+            5: "Adorei"
+        };
+
+        function updateStars(rating) {
+
+            stars.forEach((star) => {
+
+                const currentRating =
+                    Number(star.dataset.rating);
+
+                star.classList.toggle(
+                    "active",
+                    currentRating <= rating
+                );
+
+            });
+
+        }
+
+            stars.forEach((star) => {
+
+            star.addEventListener("click", () => {
+
+                selectedRating =
+                    Number(star.dataset.rating);
+
+                updateStars(selectedRating);
+
+                ratingMessage.textContent =
+                    `${selectedRating}/5 estrelas • ${ratingTexts[selectedRating]}`;
+
+            });
+
+        });
+
+        document
+            .getElementById("evaluation-form")
+            .addEventListener("submit", function (e) {
+
+                e.preventDefault();
+
+                if (selectedRating === 0) {
+
+                    alert("Selecione uma nota.");
+
+                    return;
+
+                }
+
+                if (reviewText.value.trim() === "") {
+
+                    alert("Escreva sua avaliação.");
+
+                    reviewText.focus();
+
+                    return;
+
+                }
+
+                successMessage.style.display = "block";
+
+                const publishButton =
+                    document.querySelector('button[type="submit"]');
+
+                publishButton.disabled = true;
+
+                publishButton.textContent = "Publicando...";
+                
+                setTimeout(() => {
+
+                    window.location.href = "./index.html";
+
+                }, 1500);
+
+            });
+
+    </script>
+
+</body>
+
+</html>
