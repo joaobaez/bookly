@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/src/styles.css">
     <link rel="shortcut icon" href="./assets/src/icons/favicon.ico" type="image/x-icon">
-    <script src="./assets/index.js" defer></script>
+    <script src="./assets/src/js/index.js" defer></script>
 </head>
 <body>
     <div>
@@ -132,16 +132,17 @@
                                     </div> 
                                 </div>
 
-                                <div class="level-right" >
+                                <div class="level-right">
                                     <div class="is-flex is-align-items-center is-flex-wrap-wrap">
                                         <span class="icon">
                                             <img src=".//assets/src/icons/order-by.svg" alt="ícone de filtragem">
                                         </span>
                                         
-                                        <label class="has-text-weight-medium mr-2">Ordenar:</label>
+                                        <label for="order" class="has-text-weight-medium mr-2">Ordenar:</label>
                                         
                                         <div class="select mr-2">
-                                            <select class="has-text-weight-semi-bold has-text-left ">
+                                            
+                                            <select id="order" class="has-text-weight-semi-bold has-text-left ">
                                                 <option>Data de adição recente</option>
                                                 <option>Título</option>
                                                 <option>Autor</option>
